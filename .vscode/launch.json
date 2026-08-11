@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Daily-Dsa/Daily-DSA/05-Aug-2026",
-      "program": "d:/Daily-Dsa/Daily-DSA/05-Aug-2026/build/Debug/outDebug",
+      "cwd": "d:/StriverzA2Z DSA",
+      "program": "d:/StriverzA2Z DSA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
