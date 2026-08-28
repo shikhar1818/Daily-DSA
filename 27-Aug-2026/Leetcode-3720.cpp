@@ -39,3 +39,49 @@ public:
         return "";
     }
 };
+
+
+
+// Method 2
+class Solution {
+public:
+    bool solve(vector<int> &arr,string &ans,string &target,int idx,bool isgreater,int n){
+        if(idx == n)
+        return isgreater;
+
+        for(int i = 0; i < 26; i++){
+            if(arr[i] == 0)
+            continue;
+
+            char c = (char)('a'+i);
+            if(!isgreater && c < target[idx])
+            continue;
+
+            ans.push_back(c);
+            bool gt = false;
+            if(isgreater || c > target[idx])
+            gt = true;
+
+            arr[c-'a']--;
+
+            if(solve(arr,ans,target,idx+1,gt,n))
+            return true;
+            else
+            ans.pop_back();
+            arr[c-'a']++;
+        }
+        return false;
+    }
+    string lexGreaterPermutation(string s, string target) {
+        int n = s.size();
+        vector<int> arr(26,0);
+        for(int i = 0; i < n; i++)
+        arr[s[i]-'a']++;
+
+        string ans = "";
+        if(solve(arr,ans,target,0,false,n))
+        return ans;
+
+        return "";
+    }
+};
